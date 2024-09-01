@@ -32,17 +32,12 @@ Vagrant.configure("2") do |config|
 
     config.vm.define "node2" do |node|  
       node.vm.hostname = "node2"
-      node.vm.network "private_network", ip: "1192.168.56.12"
-      config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
-      
-  
+      node.vm.network "private_network", ip: "192.168.56.12"
+      node.vm.synced_folder ".", "/vagrant", type: "virtualbox"
     end
-
-
-# Provisioning with a shell script
-config.vm.provision "shell", inline: <<-SHELL
-    sudo dnf update -y
-    sudo dnf install -y httpd
-  SHELL
-end
-end
+    
+    # Provisioning with a shell script
+    config.vm.provision "shell", inline: <<-SHELL
+      sudo dnf update -y
+      sudo dnf install -y httpd
+    SHELL
