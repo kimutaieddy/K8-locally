@@ -45,3 +45,4 @@ config.vm.provision "shell", inline: <<-SHELL
     sudo dnf install -y httpd
   SHELL
 end
+end
