@@ -1,17 +1,14 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
-Vagrantconfigure("2") do |config|
+Vagrant.configure("2") do |config|
   # Specify the box to use
   config.vm.box = "fedora/40-cloud-base"
 
   # Configure the VirtualBox provider
   config.vm.provider "virtualbox" do |vb|
     # Customize the amount of memory on the VM:
-    vb.memory = "1024" script
+    vb.memory = "1024"
     # Customize the number of CPUs on the VM:
     vb.cpus = 2
   end
