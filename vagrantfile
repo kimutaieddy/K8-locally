@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
 
   # Configure the VirtualBox provider
   config.vm.provider "virtualbox" do |vb|
+    v.name="k8s-cluster"
     # Customize the amount of memory on the VM:
     vb.memory = "2048"
     # Customize the number of CPUs on the VM:
